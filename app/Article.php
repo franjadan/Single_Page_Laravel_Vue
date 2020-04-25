@@ -19,4 +19,12 @@ class Article extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    /*
+        Cuando accedamos al artículo, en vez de a través del id como
+        /article/1 accedemos a través del slug que hemos definido
+    */
+    public function getRouteKeyName(){
+        return 'slug'; 
+    }
 }
