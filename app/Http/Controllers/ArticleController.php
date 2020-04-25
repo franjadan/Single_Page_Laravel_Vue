@@ -21,6 +21,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
+        $this->authorize('viewAny', Article::class);
+
         return ArticleResource::collection(Article::paginate(10));
     } 
 
@@ -32,6 +34,10 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->authorize('create', Article::class);
+
+    
         $article = request()->user()->articles()->create($this->validateData());
         ArticleResource::withoutWrapping();
 
@@ -48,6 +54,8 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
+        $this->authorize('view', $article);
+
         ArticleResource::withoutWrapping();
         return new ArticleResource($article);
     }
@@ -61,6 +69,8 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
+        $this->authorize('update', $article);
+
         $article->update($this->validateData());
 
         return (new ArticleResource($article))
@@ -76,6 +86,8 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
+        $this->authorize('destroy', $article);
+
         $article->delete();
 
         return response([], Response::HTTP_NO_CONTENT);
