@@ -1,10 +1,8 @@
 <template>
     <div>
-        <router-link to="/articles">
-            <div class="text-right">
-                <button class="btn btn-outline-info mt-2">Back to articles</button>
-            </div>
-        </router-link>
+        <div class="text-right">
+            <router-link class="btn btn-outline-info mt-2" to="/articles"> Back to articles</router-link>
+        </div>
         <h2>Update Article</h2>
         <ArticleForm class="mt-3" action="edit" :article="article"></ArticleForm>
     </div>

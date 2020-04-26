@@ -1,10 +1,8 @@
 <template>
     <div>
-        <router-link to="/articles/create">
-            <div class="text-right">
-                <button class="btn btn-primary mb-3">Create Article</button>
-            </div>
-        </router-link>
+        <div class="text-right">
+            <router-link class="btn btn-primary mb-3" to="/articles/create">Create Article</router-link>
+        </div>
         <ArticleList v-bind:endpoint="endpoint"></ArticleList>
     </div>
 </template>
