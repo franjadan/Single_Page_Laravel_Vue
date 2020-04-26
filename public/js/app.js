@@ -2148,6 +2148,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2177,6 +2182,11 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ArticleForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/ArticleForm */ "./resources/js/components/ArticleForm.vue");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2228,6 +2238,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2251,6 +2266,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2347,6 +2367,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2370,6 +2395,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -38263,6 +38293,14 @@ var render = function() {
   return _c(
     "div",
     [
+      _c("router-link", { attrs: { to: "/articles" } }, [
+        _c("div", { staticClass: "text-right" }, [
+          _c("button", { staticClass: "btn btn-outline-info mt-2" }, [
+            _vm._v("Back to articles")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("h2", [_vm._v("Create Article")]),
       _vm._v(" "),
       _c("ArticleForm", {
@@ -38298,6 +38336,14 @@ var render = function() {
   return _c(
     "div",
     [
+      _c("router-link", { attrs: { to: "/articles" } }, [
+        _c("div", { staticClass: "text-right" }, [
+          _c("button", { staticClass: "btn btn-outline-info mt-2" }, [
+            _vm._v("Back to articles")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("h2", [_vm._v("Update Article")]),
       _vm._v(" "),
       _c("ArticleForm", {
@@ -38332,7 +38378,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("ArticleList", { attrs: { endpoint: _vm.endpoint } })],
+    [
+      _c("router-link", { attrs: { to: "/articles/create" } }, [
+        _c("div", { staticClass: "text-right" }, [
+          _c("button", { staticClass: "btn btn-primary mb-3" }, [
+            _vm._v("Create Article")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("ArticleList", { attrs: { endpoint: _vm.endpoint } })
+    ],
     1
   )
 }
@@ -38358,31 +38414,45 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v(_vm._s(_vm.attributes.title))]),
-    _vm._v(" "),
-    _c("p", { staticClass: "mt-3" }, [_vm._v(_vm._s(_vm.attributes.content))]),
-    _vm._v(" "),
-    _c("p", { staticClass: "small" }, [
-      _vm._v(_vm._s(_vm.attributes.created_at))
-    ]),
-    _vm._v(" "),
-    _vm.can()
-      ? _c("div", [
-          _c(
-            "button",
-            { staticClass: "btn btn-warning", on: { click: _vm.edit } },
-            [_vm._v("Editar")]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            { staticClass: "btn btn-danger", on: { click: _vm.destroy } },
-            [_vm._v("Eliminar")]
-          )
+  return _c(
+    "div",
+    [
+      _c("router-link", { attrs: { to: "/articles" } }, [
+        _c("div", { staticClass: "text-right" }, [
+          _c("button", { staticClass: "btn btn-outline-info mt-2" }, [
+            _vm._v("Back to articles")
+          ])
         ])
-      : _vm._e()
-  ])
+      ]),
+      _vm._v(" "),
+      _c("h1", [_vm._v(_vm._s(_vm.attributes.title))]),
+      _vm._v(" "),
+      _c("p", { staticClass: "mt-3" }, [
+        _vm._v(_vm._s(_vm.attributes.content))
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "small" }, [
+        _vm._v(_vm._s(_vm.attributes.created_at))
+      ]),
+      _vm._v(" "),
+      _vm.can()
+        ? _c("div", [
+            _c(
+              "button",
+              { staticClass: "btn btn-warning", on: { click: _vm.edit } },
+              [_vm._v("Editar")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              { staticClass: "btn btn-danger", on: { click: _vm.destroy } },
+              [_vm._v("Eliminar")]
+            )
+          ])
+        : _vm._e()
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38439,7 +38509,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("ArticleList", { attrs: { endpoint: _vm.endpoint } })],
+    [
+      _c("router-link", { attrs: { to: "/articles/create" } }, [
+        _c("div", { staticClass: "text-right" }, [
+          _c("button", { staticClass: "btn btn-primary mb-3" }, [
+            _vm._v("Create Article")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("ArticleList", { attrs: { endpoint: _vm.endpoint } })
+    ],
     1
   )
 }
@@ -38465,18 +38545,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
+  return _c(
+    "div",
+    [
+      _c("router-link", { attrs: { to: "/articles" } }, [
+        _c("div", { staticClass: "text-right" }, [
+          _c("button", { staticClass: "btn btn-outline-info mt-2" }, [
+            _vm._v("Back to articles")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("h1", { staticClass: "text-center" }, [_vm._v("404 not found")])
-    ])
-  }
-]
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

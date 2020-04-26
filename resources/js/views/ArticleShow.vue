@@ -1,5 +1,10 @@
 <template>
     <div>
+        <router-link to="/articles">
+            <div class="text-right">
+                <button class="btn btn-outline-info mt-2">Back to articles</button>
+            </div>
+        </router-link>
         <h1>{{ attributes.title }}</h1>
         <p class="mt-3">{{ attributes.content }}</p>
         <p class="small">{{ attributes.created_at}}</p>
