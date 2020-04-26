@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>{{ attributes.title }}</h1>
-        <p class="mt-3">{{ attributes.description }}</p>
+        <p class="mt-3">{{ attributes.content }}</p>
         <p class="small">{{ attributes.created_at}}</p>
         <div v-if="can()">
             <button @click="edit" class="btn btn-warning">Editar</button>
@@ -36,6 +36,8 @@
            },
 
            edit() {
+                let slug = this.article.slug;
+                this.$router.push({ name: 'edit', params: {slug} })
 
            },
 

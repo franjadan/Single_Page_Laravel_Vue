@@ -7,8 +7,7 @@ import ArticleIndex from './views/ArticleIndex.vue';
 import MyArticles from './views/MyArticles.vue';
 import ArticleShow from './views/ArticleShow.vue';
 import ArticleCreate from './views/ArticleCreate.vue';
-
-
+import ArticleEdit from './views/ArticleEdit.vue';
 
 Vue.use(VueRouter);
 
@@ -20,6 +19,7 @@ export default new VueRouter({
         { path: '/articles', component: ArticleIndex },
         { path: '/my_articles', component: MyArticles },
         { path: '/articles/create', component: ArticleCreate },
+        { path: '/articles/:slug/edit', component: ArticleEdit, name: 'edit' },
         { path: '/articles/:slug', component: ArticleShow, name:'show' },
         { path: "*", component: NotFound },
         

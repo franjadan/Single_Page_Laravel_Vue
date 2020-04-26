@@ -5,7 +5,7 @@
                 <img class="card-img-top" :src="article.attributes.picture" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ article.attributes.title }}</h5>
-                    <p class="card-text">{{ article.attributes.description }}</p>
+                    <p class="card-text">{{ article.attributes.content }}</p>
                 </div>
             </div>
         </div>
