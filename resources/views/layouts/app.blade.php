@@ -53,6 +53,10 @@
                             <li class="nav-item ml-5">
                                 <router-link class="text-dark" to="/articles">Articles</router-link>
                             </li>
+
+                            <li class="nav-item ml-5">
+                                <router-link class="text-dark" to="/my_articles">My Articles</router-link>
+                            </li>
                          
                             <li class="nav-item ml-5">
                                 <router-link class="text-dark" to="/about">About</router-link>
