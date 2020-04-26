@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="row justify-content-md-center">
-            <div class="card mx-2 my-2" style="width: 18rem;" v-for="article of articles" :key="article.id">
+            <div class="card mx-2 my-2" style="width: 18rem;" @click="show(article.slug)" v-for="article of articles" :key="article.id">
                 <img class="card-img-top" :src="article.attributes.picture" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ article.attributes.title }}</h5>
@@ -50,6 +50,10 @@
 
             doPagination(page) {
                 this.fetchArticles(`${this.endpoint}?page=${page}`)
+            },
+
+            show(slug) {
+                this.$router.push({ name: 'show', params: {slug} })
             }
         }
     }
