@@ -43,29 +43,19 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
+                                <router-link class="text-dark" to="/login">Acceso</router-link>
+                            </li>
+                        @else
+                            <li class="nav-item">
                                 <router-link class="text-dark" to="/home">Home</router-link>
+                            </li>
+
+                            <li class="nav-item ml-5">
+                                <router-link class="text-dark" to="/articles">Articles</router-link>
                             </li>
                          
                             <li class="nav-item ml-5">
                                 <router-link class="text-dark" to="/about">About</router-link>
-                            </li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
                             </li>
                         @endguest
                     </ul>

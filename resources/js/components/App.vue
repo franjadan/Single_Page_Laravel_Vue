@@ -7,6 +7,10 @@
 
 <script>
     export default {
-       
+       props: ['user'],
+
+       created() {
+           window.token = this.user.api_token;
+       }
     }
 </script>
