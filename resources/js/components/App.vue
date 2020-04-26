@@ -17,6 +17,7 @@
 
             if(config.method === "get") {
 
+
                 //Para comprobar si hay parámetros en la url
                 if(config.url.match('/\?./')) {
                     let url = config.url.split("?");

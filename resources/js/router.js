@@ -6,6 +6,7 @@ import NotFound from './views/NotFound.vue';
 import ArticleIndex from './views/ArticleIndex.vue';
 import MyArticles from './views/MyArticles.vue';
 import ArticleShow from './views/ArticleShow.vue';
+import ArticleCreate from './views/ArticleCreate.vue';
 
 
 
@@ -18,6 +19,7 @@ export default new VueRouter({
         { path: '/about', component: AboutComponent },
         { path: '/articles', component: ArticleIndex },
         { path: '/my_articles', component: MyArticles },
+        { path: '/articles/create', component: ArticleCreate },
         { path: '/articles/:slug', component: ArticleShow, name:'show' },
         { path: "*", component: NotFound },
         

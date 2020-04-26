@@ -43,10 +43,10 @@
             axios.delete(`/api/articles/${this.article.slug}`)
             .then(response => {
                    this.$router.push({ path:'/my_articles' })
-                })
-                .catch(err => {
-                    console.log(err);
-                });
+            })
+            .catch(err => {
+                console.log(err);
+            });
            },
 
            can() {
