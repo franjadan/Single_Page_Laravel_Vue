@@ -106,6 +106,9 @@ class ArticleController extends Controller
             'title' => 'required',
             'content' => 'required',
             'thumbnail' => 'required'
+        ], [
+            'title.required' => 'El título es obligatorio',
+            'content.required' => 'El contenido es obligatorio'
         ]);
     }
 }

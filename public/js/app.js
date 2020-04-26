@@ -1981,10 +1981,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['action', 'article'],
   data: function data() {
-    return {};
+    return {
+      errors: []
+    };
   },
   methods: {
     submitForm: function submitForm() {
@@ -2004,7 +2011,8 @@ __webpack_require__.r(__webpack_exports__);
           }
         });
       })["catch"](function (err) {
-        console.log(err);
+        if (err.response.status === 422) _this.getErrors(err.response.data.errors);
+        console.log(err.response);
       });
     },
     updateArticle: function updateArticle() {
@@ -2021,7 +2029,16 @@ __webpack_require__.r(__webpack_exports__);
           }
         });
       })["catch"](function (err) {
-        console.log(err);
+        if (err.response.status === 422) _this2.getErrors(err.response.data.errors);
+        console.log(err.response);
+      });
+    },
+    getErrors: function getErrors(errors) {
+      var _this3 = this;
+
+      this.errors = [];
+      Object.values(errors).forEach(function (value) {
+        _this3.errors.push(value[0]);
       });
     }
   },
@@ -38090,6 +38107,22 @@ var render = function() {
         }
       },
       [
+        _vm.errors.length > 0
+          ? _c(
+              "div",
+              { staticClass: "alert alert-danger", attrs: { role: "alert" } },
+              [
+                _c(
+                  "ul",
+                  _vm._l(_vm.errors, function(e) {
+                    return _c("li", { key: e }, [_vm._v(_vm._s(e))])
+                  }),
+                  0
+                )
+              ]
+            )
+          : _vm._e(),
+        _vm._v(" "),
         _c("div", { staticClass: "form-group" }, [
           _c("label", { attrs: { for: "inputTitle" } }, [_vm._v("Título*")]),
           _vm._v(" "),
