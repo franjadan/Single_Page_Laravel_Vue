@@ -86,7 +86,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        $this->authorize('destroy', $article);
+        $this->authorize('delete', $article);
 
         $article->delete();
 

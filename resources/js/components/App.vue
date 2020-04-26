@@ -10,7 +10,7 @@
        props: ['user'],
 
        created() {
-           window.token = this.user.api_token;
+           window.id = this.user.id;
 
            axios.interceptors.request.use((config) => {
             console.log(config);

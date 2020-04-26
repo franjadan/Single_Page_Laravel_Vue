@@ -1926,7 +1926,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   created: function created() {
     var _this = this;
 
-    window.token = this.user.api_token;
+    window.id = this.user.id;
     axios.interceptors.request.use(function (config) {
       console.log(config);
 
@@ -2098,6 +2098,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2118,6 +2122,21 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (err) {
         console.log(err);
       });
+    },
+    edit: function edit() {},
+    destroy: function destroy() {
+      var _this2 = this;
+
+      axios["delete"]("/api/articles/".concat(this.article.slug)).then(function (response) {
+        _this2.$router.push({
+          path: '/my_articles'
+        });
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    can: function can() {
+      return this.article.user_id == window.id;
     }
   }
 });
@@ -38012,7 +38031,23 @@ var render = function() {
     _vm._v(" "),
     _c("p", { staticClass: "small" }, [
       _vm._v(_vm._s(_vm.attributes.created_at))
-    ])
+    ]),
+    _vm._v(" "),
+    _vm.can()
+      ? _c("div", [
+          _c(
+            "button",
+            { staticClass: "btn btn-warning", on: { click: _vm.edit } },
+            [_vm._v("Editar")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-danger", on: { click: _vm.destroy } },
+            [_vm._v("Eliminar")]
+          )
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
