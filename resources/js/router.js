@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import HomeComponent from './components/HomeComponent.vue';
-import AboutComponent from './components/AboutComponent.vue';
+import HomeComponent from './views/HomeComponent.vue';
+import AboutComponent from './views/AboutComponent.vue';
+import NotFound from './views/NotFound.vue';
 
 Vue.use(VueRouter);
 
@@ -9,6 +10,7 @@ export default new VueRouter({
     mode: 'history', //Quitar /#/ de la url
     routes: [
         { path: '/home', component: HomeComponent },
-        { path: '/about', component: AboutComponent }
+        { path: '/about', component: AboutComponent },
+        { path: "*", component: NotFound }
     ]
 });
